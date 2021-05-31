@@ -33,9 +33,14 @@ function useApiData(data) {
     </div>
     `
   }
-
-  document.querySelector("#content").innerHTML = `
-  <h2 class="mb-5">Here are your results . . .</h2>
-  <div class="row">${output}</div>
-  `
+  if (data.hits.length == 0) {
+    document.querySelector("#content").innerHTML = `
+    <h2 class="mb-5">Recipe not found . . .</h2>
+    `
+  } else {
+    document.querySelector("#content").innerHTML = `
+    <h2 class="mb-5">Here are your results . . .</h2>
+    <div class="row">${output}</div>
+    `
+  }
 }
