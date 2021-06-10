@@ -65,10 +65,10 @@ function useApiData(data) {
 
 function getFoodCarousel(data) {
   let output = ''
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < data.hits.length; i++) {
     output += `
-    <div class="col-lg-4">
-      <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-5" >
+      <div class="testimonial-item mx-auto">
         <img class="img-fluid rounded mb-3" src="${data.hits[i].recipe.image}" alt="image" />
         <a href="${data.hits[i].recipe.url}"><h5>${data.hits[i].recipe.label}</h5></a>
         <p class="font-weight-light mb-2"><b>${Math.round(data.hits[i].recipe.calories / data.hits[i].recipe.yield)} kcal/serving</b></p>
